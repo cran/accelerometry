@@ -38,7 +38,7 @@ Acknowledgment: This material is based upon work supported by the National Scien
 Dane R. Van Domelen
 }
 \note{
-If a wear time vector is not provided, algorithm may consider the first minute after a non-wear period as a sedentary break, which is not correct because the preceeding minute was non-wear time and may or may not have been sedentary time. This could result in a slight over-estimate of daily sedentary breaks.
+If a wear time vector is not provided, algorithm may consider the first minute after a non-wear period as a sedentary break, which is not correct because the preceeding minute was non-wear time and may or may not have been sedentary time. This could result in a slight over-estimate of sedentary breaks.
 
 Some additional information on the package accelerometry and its functions can be found on the author's website, \url{https://sites.google.com/site/danevandomelen/}
 }

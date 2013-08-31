@@ -410,11 +410,116 @@ blockaves <- function(x, window, skipchecks=FALSE) {
   
 }
 
-personvars = function(dayvars, rows, days, wk, we) {
+personvars <- function(dayvars, rows, days, wk, we) {
   .Call('accelerometry_personvars', PACKAGE = 'accelerometry', dayvars, rows, days, wk, we)
 }
 
-accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, valid.days=1,
+rle2.num <- function(x, nmax) {
+  .Call('accelerometry_rle2_num', PACKAGE = 'accelerometry', x, nmax)
+}
+
+rle2.char <- function(x, nmax) {
+  .Call('accelerometry_rle2_char', PACKAGE = 'accelerometry', x, nmax)
+}
+
+rle2 <- function(x) {
+  
+  # If x is a matrix or data frame and has multiple columns, output error
+  if (is.matrix(x) | is.data.frame(x)) {
+    if (ncol(x)>1) {
+      stop("For x= option, please enter vector or single-column matrix or data frame (can be numeric or character)")
+    }
+  }
+  
+  # Get class of x and output error if not numeric or character
+  if (is.numeric(x)) {
+    class_x = 1
+  } else if (is.character(x)) {
+    class_x = 2
+  } else {
+    stop("For x= option, please enter vector or single-column matrix or data frame (can be numeric or character)")
+  }
+  
+  # Get length of x
+  length_x = length(x)
+  
+  # If length is 10k or less, use simplest version of algorithm
+  if (length_x<=10000) {
+    if (class_x==1) {
+      out = rle2.num(x=x, nmax=-1)
+    } else {
+      out = rle2.char(x=x, nmax=-1)
+    }
+  }
+  
+  # Else use a faster method (up to 2x as fast)
+  else {
+    
+    # Calculate end point for first 0.1% of data in x
+    end_partial = ceiling(length_x/1000)
+    
+    # Send first 0.1% of x to C++ function
+    if (class_x==1) {
+      partial = rle2.num(x=x[1:end_partial], nmax=-1)
+    } else {
+      partial = rle2.char(x=x[1:end_partial], nmax=-1)
+    }
+    
+    # Calculate number of rows in out_partial
+    rows = nrow(partial)
+    
+    # If average less than 2 data points per interval, use simplest version of algorithm
+    if (rows/end_partial>0.5) {
+      
+      if (class_x==1) {
+        out = rle2.num(x=x, nmax=-1)
+      } else {
+        out = rle2.char(x=x, nmax=-1)
+      }
+      
+    }
+    
+    # Otherwise, estimate the number of rows and use faster algorithm
+    else {
+      
+      # Set nmax according to number of segments in first 0.1% of data
+      nmax = rows*1000*1.1
+      
+      # Send x to rle2_c, and confirm that nmax was sufficiently high
+      repeat {
+        
+        if (class_x==1) {
+          out = rle2.num(x=x, nmax=nmax)
+        } else {
+          out = rle2.char(x=x, nmax=nmax)
+        }
+        
+        if (nrow(out)<nmax) {
+          break
+        }
+        else {
+          nmax = nmax*10
+        }
+      }
+      
+    }
+    
+  }
+  
+  # If x was character, convert output matrix to a data frame
+  if (class_x==2) {
+    out = cbind(as.data.frame(x=cbind(out[,1]), stringsAsFactors=FALSE), 
+                as.numeric(out[,2]), as.numeric(out[,3]), as.numeric(out[,4]))
+  }
+  
+  # Add column names
+  colnames(out) = c("value","start","stop","length")
+  
+  return(out)
+  
+}
+
+accel.process <- function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, valid.days=1,
                          valid.week.days=0, valid.weekend.days=0, int.cuts=c(100,760,2020,5999),
                          days.distinct=FALSE, nonwear.window=60, nonwear.tol=0, nonwear.tol.upper=99,
                          nonwear.nci=FALSE, weartime.minimum=600, weartime.maximum=1200,
@@ -546,11 +651,6 @@ accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, vali
       stop("For active.bout.tol= option, please enter non-negative value less than active.bout.tol")
     }
     
-    # If active.bout.nci is not a logical, output error
-    if (!is.logical(active.bout.nci)) {
-      stop("For active.bout.nci= option, please enter TRUE or FALSE")
-    }
-    
     # If mvpa.bout.tol.lower out of range, output error
     if (mvpa.bout.tol.lower<0 | mvpa.bout.tol.lower>int.cuts[3]) {
       stop("For mvpa.bout.tol.lower= option, please enter non-negative value no greater than int.cuts[3]")
@@ -559,6 +659,11 @@ accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, vali
     # If vig.bout.tol.lower out of range, output error
     if (vig.bout.tol.lower<0 | vig.bout.tol.lower>int.cuts[4]) {
       stop("For vig.bout.tol.lower= option, please enter non-negative value no greater than int.cuts[4]")
+    }
+    
+    # If active.bout.nci is not a logical, output error
+    if (!is.logical(active.bout.nci)) {
+      stop("For active.bout.nci= option, please enter TRUE or FALSE")
     }
     
     # If sed.bout.tol out of range, output error
@@ -599,7 +704,6 @@ accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, vali
   # If days vector not provided, assign day 1 = 1-1440, day 2 = 1441-2880, etc.
   if (is.null(days)) {
     days = rep(NA,datalength)
-    counter = 0
     for (j in 1:ceiling(datalength/1440)) {
       days[(1440*j-1439):min(1440*j,datalength)] = ceiling(j%%7.1)
     }
@@ -609,21 +713,7 @@ accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, vali
   if (is.null(id)) {id = 1} else {id = id[1]}
   
   # Finding start and end points of each day
-  indices = seq(1,datalength,1440)
-  repeat {
-    a1 = 1:length(indices)
-    a2 = which(days[indices[a1]]!=days[indices[a1+1]-1])[1]
-    if (is.na(a2)) {break} else {
-      a3 = which(id[indices[a2]:(indices[a2]+10079)]!=id[indices[a2]])[1]
-      indices = c(indices[1:a2],(indices[a2]+a3-1),seq(indices[a2]+a3-1+10080,datalength,10080))
-    }
-  }
-  mat = matrix(NA,nrow=length(indices),ncol=3)
-  mat[,1] = days[indices]
-  mat[,2] = indices
-  j = 1:(length(indices)-1)
-  mat[j,3]=mat[j+1,2]-1
-  mat[max(j)+1,3]=datalength
+  mat = rle2(x=days)
   
   # Initializing matrix to save daily physical activity variables
   dayvars = matrix(NA,ncol=66,nrow=nrow(mat))
@@ -836,8 +926,7 @@ accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, vali
     if (brevity==1) {
       if (weekday.weekend==TRUE) {averages = averages[,c(1:8,69:71,132:134)]}
       else {averages = averages[,c(1:8)]}
-    }
-    else if (brevity==2) {
+    } else if (brevity==2) {
       if (weekday.weekend==TRUE) {
         if (is.null(steps)) {averages = averages[,c(1:8,10:44,69:71,73:107,132:134,136:170)]}
         else {averages = averages[,c(1:44,69:107,132:170)]}
@@ -846,8 +935,7 @@ accel.process = function(counts, steps=NULL, days=NULL, id=NULL, brevity=1, vali
         if (is.null(steps)) {averages = averages[,c(1:8,10:44)]}
         else {averages = averages[,1:44]}
       }
-    }
-    else {
+    } else if (brevity==3) {
       if (weekday.weekend==TRUE) {
         if (is.null(steps)) {averages = averages[,c(1:8,10:71,73:134,136:194)]}
       }

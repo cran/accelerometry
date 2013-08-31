@@ -128,6 +128,38 @@ BEGIN_RCPP
     return __sexp_result;
 END_RCPP
 }
+// rle2_num
+NumericMatrix rle2_num(NumericVector x, int nmax);
+RcppExport SEXP accelerometry_rle2_num(SEXP xSEXP, SEXP nmaxSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        NumericVector x = Rcpp::as<NumericVector >(xSEXP);
+        int nmax = Rcpp::as<int >(nmaxSEXP);
+        NumericMatrix __result = rle2_num(x, nmax);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+// rle2_char
+CharacterMatrix rle2_char(CharacterVector x, int nmax);
+RcppExport SEXP accelerometry_rle2_char(SEXP xSEXP, SEXP nmaxSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        CharacterVector x = Rcpp::as<CharacterVector >(xSEXP);
+        int nmax = Rcpp::as<int >(nmaxSEXP);
+        CharacterMatrix __result = rle2_char(x, nmax);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
 // sedbreaks
 int sedbreaks(IntegerVector counts, IntegerVector weartime, int thresh);
 RcppExport SEXP accelerometry_sedbreaks(SEXP countsSEXP, SEXP weartimeSEXP, SEXP threshSEXP) {

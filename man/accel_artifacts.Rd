@@ -4,7 +4,7 @@
 Accelerometer artifact correction
 }
 \description{
-This function corrects abnormally high count values ("artifacts") in uniaxial minute-to-minute accelerometer data by replacing such values with the average of the neighboring count values.
+This function corrects abnormally high count values in uniaxial minute-to-minute accelerometer data by replacing such values with the average of the neighboring count values.
 }
 \usage{
 accel.artifacts(counts, thresh=32767, skipchecks=FALSE)
@@ -23,10 +23,10 @@ Minimum count value that is considered an artifact.
 NA
 }
 \value{
-An integer vector identical to the input vector but with artifacts corrected.
+An integer vector identical to the input vector counts but with artifacts corrected.
 }
 \references{
-National Cancer Institute. Risk factor monitoring and methods: SAS programs for analyzing NHANES 2003-2004 accelerometer data. Available at: \url{http://riskfactor.cancer.gov/tools/nhanes_pam}. Accessed July 20, 2013.
+National Cancer Institute. Risk factor monitoring and methods: SAS programs for analyzing NHANES 2003-2004 accelerometer data. Available at: \url{http://riskfactor.cancer.gov/tools/nhanes_pam}. Accessed August 12, 2013.
 
 Acknowledgment: This material is based upon work supported by the National Science Foundation Graduate Research Fellowship under Grant No. DGE-0940903.
 }
