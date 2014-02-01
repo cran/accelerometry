@@ -39,9 +39,14 @@ Some additional information on the package accelerometry and its functions can b
 \code{\link{rle}}
 }
 \examples{
-data(testdata)
-id.numbers = testdata[,1]
-id.summarized = rle2(x=id.numbers)
+# Load in sample data frame
+data(unidata)
+
+# Get long vector of ID numbers
+id.numbers <- unidata[,1]
+
+# Summarize runs of ID numbers
+id.summarized <- rle2(x = id.numbers)
 }
 \keyword{ accelerometry }
 \keyword{ rle }

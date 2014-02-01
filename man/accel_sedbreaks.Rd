@@ -4,10 +4,11 @@
 Sedentary breaks detection
 }
 \description{
-This function identifies sedentary breaks in uniaxial minute-to-minute accelerometer data.
+This function identifies sedentary breaks in minute-to-minute accelerometer data.
 }
 \usage{
-accel.sedbreaks(counts, weartime=NULL, thresh=100, return.flags=FALSE, skipchecks=FALSE)
+accel.sedbreaks(counts, weartime = NULL, thresh = 100, return.flags = FALSE, 
+                skipchecks = FALSE)
 }
 \arguments{
   \item{counts}{
@@ -43,14 +44,25 @@ If a wear time vector is not provided, algorithm may consider the first minute a
 Some additional information on the package accelerometry and its functions can be found on the author's website, \url{https://sites.google.com/site/danevandomelen/}
 }
 \seealso{
-\code{\link{accel.weartime}}, \code{\link{accel.process}}
+\code{\link{accel.weartime}}, \code{\link{accel.process.uni}}, \code{\link{accel.process.tri}}
 }
 \examples{
-data(testdata)
-counts.part1 = testdata[testdata[,"seqn"]==21005,"paxinten"]
-weartime.flag = accel.weartime(counts=counts.part1)
-num.sedbreaks = accel.sedbreaks(counts=counts.part1, weartime=weartime.flag)
-flag.sedbreaks = accel.sedbreaks(counts=counts.part1, weartime=weartime.flag, return.flags=TRUE)
+# Load in sample data frame
+data(unidata)
+
+# Get data from ID number 21005
+id.part1 <- unidata[unidata[,"seqn"] == 21005,"seqn"]
+counts.part1 <- unidata[unidata[,"seqn"] == 21005,"paxinten"]
+
+# Identify periods of valid wear time
+weartime.flag <- accel.weartime(counts = counts.part1)
+
+# Count number of sedentary breaks (over full week)
+num.sedbreaks <- accel.sedbreaks(counts = counts.part1, weartime = weartime.flag)
+
+# Flag minutes that represent sedentary breaks
+flag.sedbreaks <- accel.sedbreaks(counts = counts.part1, weartime = weartime.flag, 
+                                  return.flags = TRUE)
 }
 \keyword{ accelerometry }
 \keyword{ sedentary breaks}

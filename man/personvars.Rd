@@ -4,7 +4,7 @@
 Function for calculating daily averages for physical activity variables
 }
 \description{
-This function calculates daily averages for physical activity variables. It is used internally by the function \code{\link{accel.process}}. Not intended for direct use.
+Not intended for direct use.
 }
 \usage{
 personvars(dayvars, rows, days, wk, we)
@@ -42,7 +42,7 @@ Dane R. Van Domelen
 NA
 }
 \seealso{
-\code{\link{accel.process}}
+NA
 }
 \examples{
 NA

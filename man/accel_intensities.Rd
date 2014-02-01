@@ -4,10 +4,10 @@
 Classification of physical activity intensities
 }
 \description{
-This function computes the number of minutes with counts in user-defined intensity levels, and the number of counts accumulated during time spent in each intensity level. It is intended for use with uniaxial minute-to-minute accelerometer data.
+This function computes the number of minutes with counts in user-defined intensity levels, and the number of counts accumulated during time spent in each intensity level. It is intended for use with minute-to-minute accelerometer data.
 }
 \usage{
-accel.intensities(counts, thresh=c(100,760,2020,5999), skipchecks=FALSE)
+accel.intensities(counts, thresh = c(100,760,2020,5999), skipchecks = FALSE)
 }
 \arguments{
   \item{counts}{
@@ -37,13 +37,20 @@ Users should generally input a vector of counts that occur during wear time only
 Some additional information on the package accelerometry and its functions can be found on the author's website, \url{https://sites.google.com/site/danevandomelen/}
 }
 \seealso{
-\code{\link{accel.weartime}}, \code{\link{accel.process}}
+\code{\link{accel.weartime}}, \code{\link{accel.process.uni}}, \code{\link{accel.process.tri}}
 }
 \examples{
-data(testdata)
-counts.part1 = testdata[testdata[,"seqn"]==21005,"paxinten"]
-counts.part1.weartime = counts.part1[accel.weartime(counts=counts.part1)==1]
-intensity.variables = accel.intensities(counts=counts.part1.weartime)
+# Load in sample data frame
+data(unidata)
+
+# Get data from ID number 21005
+counts.part1 <- unidata[unidata[,"seqn"]==21005,"paxinten"]
+
+# Create vector of counts during valid wear time only
+counts.part1.weartime <- counts.part1[accel.weartime(counts = counts.part1)==1]
+
+# Calculate physical activity intensity variables
+intensity.variables <- accel.intensities(counts = counts.part1.weartime)
 }
 \keyword{ accelerometry }
 \keyword{ intensity }

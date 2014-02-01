@@ -7,7 +7,7 @@ Moving averages
 This function returns either a vector of moving averages or the maximum moving average for some input vector x.
 }
 \usage{
-movingaves(x, window, return.max=FALSE, skipchecks=FALSE)
+movingaves(x, window, return.max = FALSE, skipchecks = FALSE)
 }
 \arguments{
   \item{x}{
@@ -41,10 +41,17 @@ Some additional information on the package accelerometry and its functions can b
 \code{\link{blockaves}}
 }
 \examples{
-data(testdata)
-counts.part1 = testdata[testdata[,"seqn"]==21005,"paxinten"]
-all.10min.averages = movingaves(x=counts.part1, window=10)
-max.10min.average = movingaves(x=counts.part1, window=10, return.max=TRUE)
+# Load in sample data frame
+data(unidata)
+
+# Get data from ID number 21005
+counts.part1 <- unidata[unidata[,"seqn"]==21005,"paxinten"]
+
+# Create vector of all 10-minute moving averages
+all.10min.averages <- movingaves(x = counts.part1, window = 10)
+
+# Calculate maximum 10-minute moving average
+max.10min.average <- movingaves(x = counts.part1, window = 10, return.max = TRUE)
 }
 \keyword{ accelerometry }
 \keyword{ moving average }

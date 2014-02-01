@@ -1,2 +1,3 @@
 useDynLib(accelerometry)
 exportPattern("^[[:alpha:]]+")
+import(Rcpp)
