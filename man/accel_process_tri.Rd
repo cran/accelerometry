@@ -7,9 +7,9 @@ Process triaxial minute-to-minute accelerometer data
 This function calculates a variety of physical activity variables based on triaxial minute-to-minute accelerometer data for individual participants. A data dictionary for the variables returned is available on the author's website, \url{https://sites.google.com/site/danevandomelen/}.
 }
 \usage{
-accel.process.tri(counts.tri, steps = NULL, start.date = as.Date("2014/1/5"), id = NULL, 
-                  brevity = 1, valid.days = 1, valid.week.days = 0, 
-                  valid.weekend.days = 0, int.axis = "vert", 
+accel.process.tri(counts.tri, steps = NULL, start.date = as.Date("2014/1/5"), 
+                  start.time = "00:00:00", id = NULL, brevity = 1, valid.days = 1, 
+                  valid.week.days = 0, valid.weekend.days = 0, int.axis = "vert", 
                   int.cuts = c(100, 760, 2020, 5999), cpm.nci = FALSE, 
                   hourly.axis = "vert", days.distinct = FALSE, nonwear.axis = "vert", 
                   nonwear.window = 60, nonwear.tol = 0, nonwear.tol.upper = 99, 
@@ -30,6 +30,9 @@ Steps vector; must be same length as counts.tri (if specified).
 }
   \item{start.date}{
 Date of first day of monitoring (must be of class 'date'). Only used to extract day of week, so if day of week is known but date is not, user can enter any date that corresponds to that day of the week. The default date corresonds to the first Sunday in January 2014. 
+}
+  \item{start.time}{
+Optional character vector indicating the start time for monitoring. If not specified it is assumed to be 00:00:00, i.e. the very beginning of the first day.
 }
   \item{id}{
 Either a single value or a vector indicating the ID number for the participant whose accelerometer data was entered.
@@ -153,13 +156,13 @@ Some additional information on the package accelerometry and its functions can b
 data(tridata)
 
 # Process data and request per-day variables
-accel.days <- accel.process.tri(counts = tridata[,1:3], steps = tridata[,4])
+accel.days1 <- accel.process.tri(counts = tridata[,1:3], steps = tridata[,4])
 
 # Process data, but for non-wear detection use triaxial vector magnitude with 90-
 # minute window and two-minute tolerance for nonzero counts up to 200
-accel.days <- accel.process.tri(counts = tridata[,1:3], steps = tridata[,4],
-                                nonwear.axis = "mag", nonwear.window = 90,
-                                nonwear.tol = 2, nonwear.tol.upper = 200)
+accel.days2 <- accel.process.tri(counts = tridata[,1:3], steps = tridata[,4],
+                                 nonwear.axis = "mag", nonwear.window = 90,
+                                 nonwear.tol = 2, nonwear.tol.upper = 200)
 }
 \keyword{ accelerometry }
 \keyword{ physical activity }
