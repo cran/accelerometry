@@ -7,21 +7,27 @@ C++ function for rle2 (character)
 This function is called by rle2 to identify runs of repeated numeric values. Not intended for direct use.
 }
 \usage{
-rle2.char(x, nmax)
+rle2.char(x, n, nmax, indices)
 }
 \arguments{
   \item{x}{
 Input vector containing character data.
 }
+  \item{n}{
+Length of x.
+}
   \item{nmax}{
 Maximum number of distinct runs.
+}
+  \item{indices}{
+If set to 0, only run values and lengths are recorded; if set to 1, start/stop positions of runs are also recorded. 
 }
 }
 \details{
 NA
 }
 \value{
-The function returns a 4-column data frame, where each row contains information on a particular "run" of repeated values. The columns are value, start index, end index, run length.
+The function returns a 2- or 4-column matrix, where each row contains information on a particular run of repeated values.
 }
 \references{
 Acknowledgment: This material is based upon work supported by the National Science Foundation Graduate Research Fellowship under Grant No. DGE-0940903.

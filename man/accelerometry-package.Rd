@@ -12,8 +12,8 @@ This package contains a collection of functions that perform operations on time-
 \tabular{ll}{
 Package: \tab accelerometry\cr
 Type: \tab Package\cr
-Version: \tab 2.2\cr
-Date: \tab 2014-02-20\cr
+Version: \tab 2.2.1\cr
+Date: \tab 2014-03-20\cr
 License: \tab GPL-2\cr
 }
 The following functions are contained in the package accelerometry:
@@ -27,7 +27,8 @@ The following functions are contained in the package accelerometry:
 \code{\link{accel.weartime}},
 \code{\link{blockaves}},
 \code{\link{movingaves}},
-\code{\link{rle2}}
+\code{\link{rle2}},
+\code{\link{inverse.rle2}}
 
 Two datasets are included for the Examples: unidata and tridata. unidata contains uniaxial data on the first five participants in NHANES 2003-2004 [2], and tridata contains seven days of triaxial data from a volunteer, provided by Ei Ei Khaing Nang from the Department of Epidemiology and Public Health, Yong Loo Lin School of Medicine,  National University of Singapore, Singapore, Republic of Singapore.
 
