@@ -14,9 +14,6 @@ inverse.rle2(x)
 Object returned by rle2.
 }
 }
-\details{
-NA
-}
 \value{
 Numeric or character vector.
 }
@@ -34,12 +31,12 @@ This function expands a vector compressed by rle2. It basically just re-formats 
 }
 \examples{
 # Create dummie vector x
-x = c(0,0,0,-1,-1,10,10,4,6,6)
+x <- c(0, 0, 0, -1, -1, 10, 10, 4, 6, 6)
 
 # Summarize x using rle2
-x.summarized = rle2(x)
+x.summarized <- rle2(x)
 
 # Reconstruct x
-x.reconstructed = inverse.rle2(x.summarized)
+x.reconstructed <- inverse.rle2(x.summarized)
 }
 \keyword{ rle }

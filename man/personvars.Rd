@@ -26,9 +26,6 @@ Minimum number of valid weekdays required to be considered valid data for analys
 Minimum number of valid weekend days required to be considered valid data for analysis.
 }
 }
-\details{
-NA
-}
 \value{
 Matrix with averages for physical activity variables.
 }
@@ -37,14 +34,5 @@ Acknowledgment: This material is based upon work supported by the National Scien
 }
 \author{
 Dane R. Van Domelen
-}
-\note{
-NA
-}
-\seealso{
-NA
-}
-\examples{
-NA
 }
 \keyword{ accelerometry }

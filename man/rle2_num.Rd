@@ -23,9 +23,6 @@ Maximum number of distinct runs.
 If set to 0, only run values and lengths are recorded; if set to 1, start/stop positions of runs are also recorded. 
 }
 }
-\details{
-NA
-}
 \value{
 The function returns a 2- or 4-column matrix, where each row contains information on a particular run of repeated values.
 }
@@ -34,14 +31,5 @@ Acknowledgment: This material is based upon work supported by the National Scien
 }
 \author{
 Dane R. Van Domelen
-}
-\note{
-NA
-}
-\seealso{
-NA
-}
-\examples{
-NA
 }
 \keyword{ accelerometry }

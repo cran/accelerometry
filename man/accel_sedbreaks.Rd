@@ -23,11 +23,9 @@ Minimum count value that must be achieved to record a sedentary break.
   \item{return.flags}{
 If TRUE, function returns vector of 0's and 1's in which 1's indicate minutes in which a sedentary break has occurred; if FALSE, function returns total number of sedentary breaks during monitoring period.
 }
-  \item{skipchecks}{If TRUE, function skips error checking code and runs slightly faster.
+  \item{skipchecks}{
+If TRUE, function skips error checking code and runs slightly faster.
 }
-}
-\details{
-NA
 }
 \value{
 Either a single numeric value indicating the total number of sedentary breaks during the monitoring period, or a vector of same length as counts where 1's indicate minutes in which a sedentary break has occurred.
@@ -51,8 +49,8 @@ Some additional information on the package accelerometry and its functions can b
 data(unidata)
 
 # Get data from ID number 21005
-id.part1 <- unidata[unidata[,"seqn"] == 21005,"seqn"]
-counts.part1 <- unidata[unidata[,"seqn"] == 21005,"paxinten"]
+id.part1 <- unidata[unidata[, "seqn"] == 21005, "seqn"]
+counts.part1 <- unidata[unidata[, "seqn"] == 21005, "paxinten"]
 
 # Identify periods of valid wear time
 weartime.flag <- accel.weartime(counts = counts.part1)

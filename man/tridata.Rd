@@ -22,13 +22,13 @@ This dataset contains a four-column matrix. The first three columns are counts i
 This data was graciously provided by Ei Ei Khaing Nang from the Department of Epidemiology and Public Health, Yong Loo Lin School of Medicine,  National University of Singapore, Singapore, Republic of Singapore. 
 }
 \references{
-NA
+Acknowledgment: This material is based upon work supported by the National Science Foundation Graduate Research Fellowship under Grant No. DGE-0940903.
 }
 \examples{
 # Load in sample data
 data(tridata)
 
 # Plot one day of step data
-plot(tridata[1:1440,4])
+plot(tridata[1:1440, 4])
 }
 \keyword{datasets}
