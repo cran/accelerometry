@@ -2,7 +2,7 @@
 \alias{unidata}
 \docType{data}
 \title{
-Uniaxial sample data for package accelerometry
+Uniaxial Sample Data
 }
 \description{
 This dataset is used to illustrate the various functions in the package accelerometry. 

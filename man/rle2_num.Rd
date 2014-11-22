@@ -1,7 +1,7 @@
 \name{rle2.num}
 \alias{rle2.num}
 \title{
-C++ function for rle2 (numeric)
+C++ Function for rle2 (Numeric)
 }
 \description{
 This function is called by rle2 to identify runs of repeated numeric values. Not intended for direct use.

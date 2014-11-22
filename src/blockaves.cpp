@@ -5,7 +5,7 @@ using namespace Rcpp;
 NumericVector blockaves(NumericVector x, int window) {
   int n = x.size();
   NumericVector out(n/window);
-  float sum = 0;
+  double sum = 0;
   int index = 0;
   for (int a = 0; a < n; ++a) {
     sum += x[a];

@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-IntegerVector sedbreaks_flags(IntegerVector counts, IntegerVector weartime, int thresh) {
+IntegerVector sedbreaks_flags(NumericVector counts, IntegerVector weartime, int thresh) {
   int n = counts.size();
   IntegerVector out(n);
   for (int a = 0; a < n-1; ++a)

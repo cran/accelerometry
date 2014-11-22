@@ -1,7 +1,7 @@
 \name{inverse.rle2}
 \alias{inverse.rle2}
 \title{
-Inverse run length encoding
+Inverse Run Length Encoding (Alternate Implementation)
 }
 \description{
 Re-construct vector compressed by rle2.

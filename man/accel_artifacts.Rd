@@ -1,7 +1,7 @@
 \name{accel.artifacts}
 \alias{accel.artifacts}
 \title{
-Accelerometer artifact correction
+Accelerometer Artifact Correction
 }
 \description{
 This function corrects abnormally high count values in minute-to-minute accelerometer data by replacing such values with the average of the neighboring count values.

@@ -2,9 +2,9 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-IntegerVector intensities(IntegerVector counts, IntegerVector thresh) {
+NumericVector intensities(NumericVector counts, IntegerVector thresh) {
   int n = counts.size();
-  IntegerVector out(16);
+  NumericVector out(16);
   for (int a = 0; a <n; ++a) {
     if (counts[a]<thresh[0]) {
       out[0] += 1;

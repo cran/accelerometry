@@ -1,7 +1,7 @@
 \name{movingaves}
 \alias{movingaves}
 \title{
-Moving averages
+Moving Averages
 }
 \description{
 This function returns either a vector of moving averages or the maximum moving average for some input vector x.

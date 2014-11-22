@@ -5,13 +5,13 @@ using namespace Rcpp;
 NumericVector movingaves(NumericVector x, int window) {
   int n = x.size();
   NumericVector out(n-window+1);
-  float sum = 0;
+  double sum = 0;
   NumericVector current(window);
   for (int a = 0; a < window; ++a) {
     current[a] = x[a];
     sum += x[a];
   }
-  float ave = sum/window;
+  double ave = sum/window;
   out[0]=ave;
   for (int b = window; b < n; ++b) {
     sum = sum + x[b]-x[b-window];

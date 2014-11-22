@@ -1,7 +1,7 @@
 \name{accel.bouts}
 \alias{accel.bouts}
 \title{
-Activity bout detection
+Activity Bout Detection
 }
 \description{
 This function identifies bouts of physical activity in minute-to-minute accelerometer data.

@@ -1,7 +1,7 @@
 \name{personvars}
 \alias{personvars}
 \title{
-Function for calculating daily averages for physical activity variables
+Function for Calculating Daily Averages for Physical Activity Variables
 }
 \description{
 Not intended for direct use.

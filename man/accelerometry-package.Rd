@@ -3,7 +3,7 @@
 \alias{accelerometry}
 \docType{package}
 \title{
-Functions for processing minute-to-minute accelerometer data
+Functions for Processing Minute-to-Minute Accelerometer Data
 }
 \description{
 This package contains a collection of functions that perform operations on time-series accelerometer data, such as identify non-wear time, flag minutes that are part of an activity bout, and find the maximum 10-minute average count value. The functions are generally very flexible, allowing for a variety of algorithms to be implemented. Most of the functions are written in C++ for efficiency.
@@ -12,8 +12,8 @@ This package contains a collection of functions that perform operations on time-
 \tabular{ll}{
 Package: \tab accelerometry\cr
 Type: \tab Package\cr
-Version: \tab 2.2.2\cr
-Date: \tab 2014-08-10\cr
+Version: \tab 2.2.3\cr
+Date: \tab 2014-11-22\cr
 License: \tab GPL-2\cr
 }
 The following functions are included in the package:
@@ -34,7 +34,7 @@ Most of these functions use C++ code, added via the 'Rcpp' package [1, 2].
 
 Two datasets are included for the Examples: unidata and tridata. unidata contains uniaxial data on the first five participants in NHANES 2003-2004 [3], and tridata contains seven days of triaxial data from a volunteer, provided by Ei Ei Khaing Nang from the Department of Epidemiology and Public Health, Yong Loo Lin School of Medicine,  National University of Singapore, Singapore, Republic of Singapore.
 
-Some additional information on the package accelerometry and its functions can be found on Dane's website, \url{https://sites.google.com/site/danevandomelen/}
+Some additional information on the package `accelerometry' and its functions can be found on Dane's website, \url{https://sites.google.com/site/danevandomelen/}
 }
 \author{
 Dane R. Van Domelen

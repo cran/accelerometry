@@ -1,7 +1,7 @@
 \name{rle2}
 \alias{rle2}
 \title{
-Run length encoding (alternate implementation)
+Run Length Encoding (Alternate Implementation)
 }
 \description{
 Summarize vector of numeric or character values containing runs of repeated values. This function is very similar to the base function rle, but sometimes much faster, and different in that it has an option to return the start/end indices for each run.

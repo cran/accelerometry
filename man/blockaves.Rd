@@ -1,7 +1,7 @@
 \name{blockaves}
 \alias{blockaves}
 \title{
-Block average calculator
+Block Average Calculator
 }
 \description{
 This function returns averages for non-overlapping segments of data.

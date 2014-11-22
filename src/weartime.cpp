@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-IntegerVector weartime(IntegerVector counts, int window, int tol, int tol_upper, int nci, int days_distinct) {
+IntegerVector weartime(NumericVector counts, int window, int tol, int tol_upper, int nci, int days_distinct) {
   int n = counts.size();
   IntegerVector out(n);
   for (int a = 0; a < n; ++a) out[a] = 1;

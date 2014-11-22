@@ -12,7 +12,7 @@ NumericMatrix rle2_num(NumericVector x, int n, int nmax, int indices) {
       for (int a = 1; a < n; ++a)
         if (x(a)!=x(a-1)) rows += 1;
       NumericMatrix out(rows,2);
-      int presval = x(0);
+      double presval = x(0);
       int prespos = 0;
       int index = -1;
       for (int b = 1; b < n; ++b) {
@@ -34,7 +34,7 @@ NumericMatrix rle2_num(NumericVector x, int n, int nmax, int indices) {
     else {
       
       NumericMatrix out(nmax,2);
-      int presval = x(0);
+      double presval = x(0);
       int prespos = 0;
       int index = -1;
       for (int b = 1; b < n; ++b) {
@@ -75,7 +75,7 @@ NumericMatrix rle2_num(NumericVector x, int n, int nmax, int indices) {
       for (int a = 1; a < n; ++a)
         if (x(a)!=x(a-1)) rows += 1;
       NumericMatrix out(rows,4);
-      int presval = x(0);
+      double presval = x(0);
       int prespos = 0;
       int index = -1;
       for (int b = 1; b < n; ++b) {
@@ -102,7 +102,7 @@ NumericMatrix rle2_num(NumericVector x, int n, int nmax, int indices) {
     else {
       
       NumericMatrix out(nmax,4);
-      int presval = x(0);
+      double presval = x(0);
       int prespos = 0;
       int index = -1;
       for (int b = 1; b < n; ++b) {

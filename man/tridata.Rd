@@ -2,7 +2,7 @@
 \alias{tridata}
 \docType{data}
 \title{
-Uniaxial sample data for package accelerometry
+Triaxial Sample Data
 }
 \description{
 This dataset is used to illustrate the accel.process.tri function in the accelerometry package.

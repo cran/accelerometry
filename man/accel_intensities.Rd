@@ -1,7 +1,7 @@
 \name{accel.intensities}
 \alias{accel.intensities}
 \title{
-Classification of physical activity intensities
+Classification of Physical Activity Intensities
 }
 \description{
 This function computes the number of minutes with counts in user-defined intensity levels, and the number of counts accumulated during time spent in each intensity level. It is intended for use with minute-to-minute accelerometer data.

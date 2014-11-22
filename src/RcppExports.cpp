@@ -6,15 +6,15 @@
 using namespace Rcpp;
 
 // artifacts
-IntegerVector artifacts(IntegerVector counts, int thresh);
+NumericVector artifacts(NumericVector counts, int thresh);
 RcppExport SEXP accelerometry_artifacts(SEXP countsSEXP, SEXP threshSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        IntegerVector counts = Rcpp::as<IntegerVector >(countsSEXP);
+        NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
         int thresh = Rcpp::as<int >(threshSEXP);
-        IntegerVector __result = artifacts(counts, thresh);
+        NumericVector __result = artifacts(counts, thresh);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
@@ -22,13 +22,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // bouts
-IntegerVector bouts(IntegerVector counts, IntegerVector weartime, int bout_length, int thresh_lower, int thresh_upper, int tol, int tol_lower, int tol_upper, int nci, int days_distinct);
+IntegerVector bouts(NumericVector counts, IntegerVector weartime, int bout_length, int thresh_lower, int thresh_upper, int tol, int tol_lower, int tol_upper, int nci, int days_distinct);
 RcppExport SEXP accelerometry_bouts(SEXP countsSEXP, SEXP weartimeSEXP, SEXP bout_lengthSEXP, SEXP thresh_lowerSEXP, SEXP thresh_upperSEXP, SEXP tolSEXP, SEXP tol_lowerSEXP, SEXP tol_upperSEXP, SEXP nciSEXP, SEXP days_distinctSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        IntegerVector counts = Rcpp::as<IntegerVector >(countsSEXP);
+        NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
         IntegerVector weartime = Rcpp::as<IntegerVector >(weartimeSEXP);
         int bout_length = Rcpp::as<int >(bout_lengthSEXP);
         int thresh_lower = Rcpp::as<int >(thresh_lowerSEXP);
@@ -46,15 +46,15 @@ BEGIN_RCPP
 END_RCPP
 }
 // intensities
-IntegerVector intensities(IntegerVector counts, IntegerVector thresh);
+NumericVector intensities(NumericVector counts, IntegerVector thresh);
 RcppExport SEXP accelerometry_intensities(SEXP countsSEXP, SEXP threshSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        IntegerVector counts = Rcpp::as<IntegerVector >(countsSEXP);
+        NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
         IntegerVector thresh = Rcpp::as<IntegerVector >(threshSEXP);
-        IntegerVector __result = intensities(counts, thresh);
+        NumericVector __result = intensities(counts, thresh);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
@@ -78,7 +78,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // movingaves_max
-float movingaves_max(NumericVector x, int window);
+double movingaves_max(NumericVector x, int window);
 RcppExport SEXP accelerometry_movingaves_max(SEXP xSEXP, SEXP windowSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
@@ -86,7 +86,7 @@ BEGIN_RCPP
         Rcpp::RNGScope __rngScope;
         NumericVector x = Rcpp::as<NumericVector >(xSEXP);
         int window = Rcpp::as<int >(windowSEXP);
-        float __result = movingaves_max(x, window);
+        double __result = movingaves_max(x, window);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
@@ -165,13 +165,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // sedbreaks
-int sedbreaks(IntegerVector counts, IntegerVector weartime, int thresh);
+int sedbreaks(NumericVector counts, IntegerVector weartime, int thresh);
 RcppExport SEXP accelerometry_sedbreaks(SEXP countsSEXP, SEXP weartimeSEXP, SEXP threshSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        IntegerVector counts = Rcpp::as<IntegerVector >(countsSEXP);
+        NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
         IntegerVector weartime = Rcpp::as<IntegerVector >(weartimeSEXP);
         int thresh = Rcpp::as<int >(threshSEXP);
         int __result = sedbreaks(counts, weartime, thresh);
@@ -182,13 +182,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // sedbreaks_flags
-IntegerVector sedbreaks_flags(IntegerVector counts, IntegerVector weartime, int thresh);
+IntegerVector sedbreaks_flags(NumericVector counts, IntegerVector weartime, int thresh);
 RcppExport SEXP accelerometry_sedbreaks_flags(SEXP countsSEXP, SEXP weartimeSEXP, SEXP threshSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        IntegerVector counts = Rcpp::as<IntegerVector >(countsSEXP);
+        NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
         IntegerVector weartime = Rcpp::as<IntegerVector >(weartimeSEXP);
         int thresh = Rcpp::as<int >(threshSEXP);
         IntegerVector __result = sedbreaks_flags(counts, weartime, thresh);
@@ -199,13 +199,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // weartime
-IntegerVector weartime(IntegerVector counts, int window, int tol, int tol_upper, int nci, int days_distinct);
+IntegerVector weartime(NumericVector counts, int window, int tol, int tol_upper, int nci, int days_distinct);
 RcppExport SEXP accelerometry_weartime(SEXP countsSEXP, SEXP windowSEXP, SEXP tolSEXP, SEXP tol_upperSEXP, SEXP nciSEXP, SEXP days_distinctSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        IntegerVector counts = Rcpp::as<IntegerVector >(countsSEXP);
+        NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
         int window = Rcpp::as<int >(windowSEXP);
         int tol = Rcpp::as<int >(tolSEXP);
         int tol_upper = Rcpp::as<int >(tol_upperSEXP);

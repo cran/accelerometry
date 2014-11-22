@@ -1,7 +1,7 @@
 \name{accel.sedbreaks}
 \alias{accel.sedbreaks}
 \title{
-Sedentary breaks detection
+Sedentary Breaks Detection
 }
 \description{
 This function identifies sedentary breaks in minute-to-minute accelerometer data.

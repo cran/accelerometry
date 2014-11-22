@@ -2,11 +2,11 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-IntegerVector artifacts(IntegerVector counts, int thresh) {
+NumericVector artifacts(NumericVector counts, int thresh) {
   int n = counts.size();
-  IntegerVector out(n);
-  int before = -1;
-  int after = -1;
+  NumericVector out(n);
+  double before = -1;
+  double after = -1;
   if (counts[0]>=thresh) {
     for (int a = 1; a < n; ++a) {
       if (counts[a]<thresh) {
@@ -33,7 +33,7 @@ IntegerVector artifacts(IntegerVector counts, int thresh) {
         }
       }
       if (before>-1 && after>-1) {
-        if ((before+after)%2==0) out[b] = (before+after)/2;
+        if (fmod(before+after, 2)==0) out[b] = (before+after)/2;
         else out[b] = (before+after+1)/2;
       }
       else if (before==-1) out[b] = after;

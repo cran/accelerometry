@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-IntegerVector bouts(IntegerVector counts, IntegerVector weartime, int bout_length, int thresh_lower, int thresh_upper, int tol, int tol_lower, int tol_upper, int nci, int days_distinct) {
+IntegerVector bouts(NumericVector counts, IntegerVector weartime, int bout_length, int thresh_lower, int thresh_upper, int tol, int tol_lower, int tol_upper, int nci, int days_distinct) {
   int n = counts.size();
   IntegerVector out(n);
   

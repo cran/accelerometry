@@ -1,7 +1,7 @@
 \name{accel.process.tri}
 \alias{accel.process.tri}
 \title{
-Process triaxial minute-to-minute accelerometer data
+Process Triaxial Minute-to-Minute Accelerometer Data
 }
 \description{
 This function calculates a variety of physical activity variables based on triaxial minute-to-minute accelerometer data for individual participants. A data dictionary for the variables returned is available here: \url{https://sites.google.com/site/danevandomelen/r-package-accelerometry/data-dictionary}.
@@ -158,7 +158,7 @@ Some additional information on the package accelerometry and its functions can b
 \code{\link{accel.artifacts}}, \code{\link{accel.bouts}}, \code{\link{accel.process.uni}}, \code{\link{accel.intensities}}, \code{\link{accel.sedbreaks}}, \code{\link{accel.weartime}}, \code{\link{blockaves}}, \code{\link{movingaves}}, \code{\link{rle2}}, \code{\link{inverse.rle2}}
 }
 \examples{
-# Load in sample data frame
+# Load in sample matrix
 data(tridata)
 
 # Process data and request per-day variables

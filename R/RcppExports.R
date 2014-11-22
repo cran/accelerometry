@@ -141,8 +141,8 @@ accel.bouts <- function(counts, weartime = NULL, bout.length = 10, thresh.lower 
     
     # If tol > 0, nci = FALSE, and tol.lower = 0, output warning
     if (tol > 0 & nci == FALSE & tol.lower == 0) {
-      warning("Specifying a non-zero for tol.lower is highly recommended; 
-              otherwise, bout durations will frequently be over-estimated")
+      message("Specifying a non-zero for tol.lower is highly recommended; 
+               otherwise, bout durations will frequently be over-estimated")
     }
     
   }

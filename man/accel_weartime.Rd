@@ -1,7 +1,7 @@
 \name{accel.weartime}
 \alias{accel.weartime}
 \title{
-Accelerometer non-wear detection
+Accelerometer Non-Wear Detection
 }
 \description{
 This function identifies periods of non-wear time in minute-to-minute accelerometer data.
