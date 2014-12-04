@@ -1,5 +1,5 @@
-9d0f4ea3ed6502a4b3d11016354b66bb *DESCRIPTION
-31eb34961298687bbd0038192ab19313 *NAMESPACE
+2573f0cae8f18b1876fa829c5ca86f22 *DESCRIPTION
+6848a85c9ad615947ecb3a6c2a41f222 *NAMESPACE
 457302c6c74ffc94128ab8310b805ff3 *R/RcppExports.R
 e1ae852411e33f8120d09e4dd722e525 *data/tridata.rda
 62f4a4c69d186636892ed05021edf45b *data/unidata.rda
@@ -12,14 +12,12 @@ c41c789e89b066f371a2ca911a9dbc82 *man/accel_process_tri.Rd
 62e55dd22729c0bf498b9444b9dcfa38 *man/accel_process_uni.Rd
 90969e77eee7cdf5eefb245e5a398d82 *man/accel_sedbreaks.Rd
 836de065f28981f0f4b969ab5f76edef *man/accel_weartime.Rd
-a765034bb524c6593883fc8cdfdbd26a *man/accelerometry-package.Rd
+2338cf657764a328438b6b648f51cbd6 *man/accelerometry-package.Rd
 f8f02bcd4ceaf8db77f6cedd1300ff6e *man/blockaves.Rd
 2987dd543bdafa3632ed3d4ca041d539 *man/inverse_rle2.Rd
 82a5f17fb6ab815179540ffa0311c9de *man/movingaves.Rd
 f0753ba4a27b5ebcc8a0920a95ef29a6 *man/personvars.Rd
 572092ec419142f4a4a48399c56f6691 *man/rle2.Rd
-658da73a7ad9318b9acb7c24f3aa50da *man/rle2_char.Rd
-1335261f04ce63288f7010a3f4f68c83 *man/rle2_num.Rd
 e6625f1b601c1f0aa3f56a67cb8bc97c *man/tridata.Rd
 a88e65abc0e903608798c3ffcb5acf6d *man/unidata.Rd
 b3f86c20b81b51f5162874977d38784d *src/Makevars

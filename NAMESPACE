@@ -1,3 +1,5 @@
 useDynLib(accelerometry)
-exportPattern("^[[:alpha:]]+")
+export(accel.artifacts, accel.bouts, accel.process.uni, accel.process.tri, 
+       accel.intensities, accel.sedbreaks, accel.weartime, blockaves, 
+       movingaves, rle2, inverse.rle2, personvars)
 importFrom(Rcpp,evalCpp)
