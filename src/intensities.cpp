@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-NumericVector intensities(NumericVector counts, IntegerVector thresh) {
+NumericVector intensities(NumericVector counts, NumericVector thresh) {
   int n = counts.size();
   NumericVector out(16);
   for (int a = 0; a <n; ++a) {

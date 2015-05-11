@@ -1,6 +1,6 @@
-2573f0cae8f18b1876fa829c5ca86f22 *DESCRIPTION
+32f223129d76b26b2e25331887b42567 *DESCRIPTION
 6848a85c9ad615947ecb3a6c2a41f222 *NAMESPACE
-457302c6c74ffc94128ab8310b805ff3 *R/RcppExports.R
+bac0ae35b37cde1a099661c1b96f27a0 *R/RcppExports.R
 e1ae852411e33f8120d09e4dd722e525 *data/tridata.rda
 62f4a4c69d186636892ed05021edf45b *data/unidata.rda
 a34b0a1a90256630b32053cb27bb7f3b *demo/00Index
@@ -12,7 +12,7 @@ c41c789e89b066f371a2ca911a9dbc82 *man/accel_process_tri.Rd
 62e55dd22729c0bf498b9444b9dcfa38 *man/accel_process_uni.Rd
 90969e77eee7cdf5eefb245e5a398d82 *man/accel_sedbreaks.Rd
 836de065f28981f0f4b969ab5f76edef *man/accel_weartime.Rd
-2338cf657764a328438b6b648f51cbd6 *man/accelerometry-package.Rd
+2cbd668106156067c7b4362c8e3e9f8d *man/accelerometry-package.Rd
 f8f02bcd4ceaf8db77f6cedd1300ff6e *man/blockaves.Rd
 2987dd543bdafa3632ed3d4ca041d539 *man/inverse_rle2.Rd
 82a5f17fb6ab815179540ffa0311c9de *man/movingaves.Rd
@@ -22,11 +22,11 @@ e6625f1b601c1f0aa3f56a67cb8bc97c *man/tridata.Rd
 a88e65abc0e903608798c3ffcb5acf6d *man/unidata.Rd
 b3f86c20b81b51f5162874977d38784d *src/Makevars
 73505498722ad4b07b0ddb3067e92523 *src/Makevars.win
-756f5ea02e0497ff07363f096347fbba *src/RcppExports.cpp
+2f2c088e331bf232c109fc7227c99408 *src/RcppExports.cpp
 04d588cf09547ca31ea8b4cdf0885d28 *src/artifacts.cpp
 fc1f081c9ddfb8eadcd92c68f610373e *src/blockaves.cpp
 101024da70ea9ddc3ab857a35ef52b9d *src/bouts.cpp
-192069bddcf07c200789e3431adaec45 *src/intensities.cpp
+fef2479c1fc18b41571d221e2b03f6de *src/intensities.cpp
 8346162543999325b4f2a71d07a3c534 *src/movingaves.cpp
 e1471471f2724ff9914f7a3b221a79e4 *src/movingaves_max.cpp
 4a559967b05b0a7385efa84e7b1621ea *src/personvars.cpp

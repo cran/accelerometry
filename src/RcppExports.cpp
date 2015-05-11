@@ -46,14 +46,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // intensities
-NumericVector intensities(NumericVector counts, IntegerVector thresh);
+NumericVector intensities(NumericVector counts, NumericVector thresh);
 RcppExport SEXP accelerometry_intensities(SEXP countsSEXP, SEXP threshSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
         NumericVector counts = Rcpp::as<NumericVector >(countsSEXP);
-        IntegerVector thresh = Rcpp::as<IntegerVector >(threshSEXP);
+        NumericVector thresh = Rcpp::as<NumericVector >(threshSEXP);
         NumericVector __result = intensities(counts, thresh);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
