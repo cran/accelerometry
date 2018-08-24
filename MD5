@@ -1,8 +1,8 @@
-a62c9ac4d18e2851e9a64c716d7d25a5 *DESCRIPTION
+eab568977352d5c0673a2f78a88bc30b *DESCRIPTION
 35ac50ff8d4e5a50f88a0964b1ca939e *NAMESPACE
 275d7f9401da960e85fc5cb47e6ea2ce *R/RcppExports.R
 109e907aa002e689a0faf21ac7b9f513 *R/accelerometry-data.R
-f4db6af14ba61cd35523f2004d53c5cd *R/accelerometry.R
+828a4ccda13aae9738a6f62d35d33b2a *R/accelerometry.R
 9c388485d1260b8538e07127c9e971d8 *R/blockaves.R
 9887a74c1049d9a88d43e4a29228afcb *R/blocksums.R
 f76b1b7a6f707357be86b0b4345fed46 *R/inverse_rle2.R
@@ -15,9 +15,9 @@ b9b101750b7cd2f26b6352d97c05a74f *R/rle2.R
 0e55f3a9daae109d3724e3186b6e3ad9 *data/tridata.rda
 62f4a4c69d186636892ed05021edf45b *data/unidata.rda
 2a3c84dae2395516e8ea6b54c2964543 *inst/doc/accelerometry.R
-440ed3737da2a472b9a4a8199f649d00 *inst/doc/accelerometry.Rmd
-bafd5150a48a9f42036e905584d371da *inst/doc/accelerometry.html
-88f847ca3aa809cb392abb03fa617a36 *man/accelerometry.Rd
+2abf7946c239be17b0b65d424bc95fff *inst/doc/accelerometry.Rmd
+e2127067688b4e6dbab798760bd01d5a *inst/doc/accelerometry.html
+ad7bd1037d7a13e1788dea13d0d4b4d5 *man/accelerometry.Rd
 45cc14cbd65cbec77bf88cd49edfaad1 *man/artifacts.Rd
 b99d1b5817a831db7a4db44c50da183f *man/blockaves.Rd
 b56904b5fd6624d6375508c03e87eb75 *man/blocksums.Rd
@@ -35,7 +35,7 @@ fe43ff46bb7b8014f21733f62243d35d *man/tridata.Rd
 d988392b7f8cc43c21440f59af3294bf *man/unidata.Rd
 f7a869253171fa490f4c216e4efa4754 *man/weartime.Rd
 1ab111dc92a2ef3b365723105abac97d *src/RcppExports.cpp
-becbd97c4f9e5dd1b187c17167747b33 *src/artifacts.cpp
+201347a82c366391f6c2d283e6f11302 *src/artifacts.cpp
 1b29536422ab3162aedb9cbe0ac7a8ec *src/blockaves_c.cpp
 aa8f588476fa8362f2f7f6d9f4e31581 *src/blocksums_c.cpp
 c2413b762e51ae00c2678e5c2deb0af1 *src/bouts.cpp
@@ -46,5 +46,5 @@ f5f0ab3b4ad38923c02b3a1a75af1ff0 *src/movingaves_c.cpp
 c3780b67ace6190ac9239340e41eb703 *src/rle2_c.cpp
 6a8230132f5def3eaff91591fd076c91 *src/sedbreaks_c.cpp
 d6f0f83127cb6300202ea7eaf1bb2762 *src/weartime.cpp
-440ed3737da2a472b9a4a8199f649d00 *vignettes/accelerometry.Rmd
+2abf7946c239be17b0b65d424bc95fff *vignettes/accelerometry.Rmd
 4bca8c0869035a302f60c81e3642692d *vignettes/bibliography.bib

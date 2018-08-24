@@ -12,7 +12,7 @@
 
 <meta name="author" content="Dane Van Domelen   vandomed@gmail.com" />
 
-<meta name="date" content="2018-08-20" />
+<meta name="date" content="2018-08-23" />
 
 <title>Functions for Processing Accelerometer Data</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Functions for Processing Accelerometer Data</h1>
 <h4 class="author"><em>Dane Van Domelen <br> <a href="mailto:vandomed@gmail.com">vandomed@gmail.com</a></em></h4>
-<h4 class="date"><em>2018-08-20</em></h4>
+<h4 class="date"><em>2018-08-23</em></h4>
 
 
 
@@ -149,7 +149,7 @@ counts.<span class="dv">21007</span> &lt;-<span class="st"> </span>counts[seqn <
 </div>
 <div id="bouts" class="section level3">
 <h3><code>bouts</code></h3>
-<p>A “bout” is a sustained period of activity of some intensity for some time. Bouted MVPA (moderate-to-vigorous physical activity) is a popular bout variable because physical activity guidelines are often based on MVPA accumulated in bouts of <span class="math inline">\(&gt;=\)</span> 10 minutes <span class="citation">(Troiano et al. 2008)</span>. Bouted sedentary time can also be interesting, given recent enthusiasm for studying sedentary behaviors.</p>
+<p>A “bout” is a sustained period of activity of some intensity for some time. Bouted MVPA (moderate-to-vigorous physical activity) is a popular bout variable because physical activity guidelines are often based on MVPA accumulated in bouts of <span class="math inline">\(\ge\)</span> 10 minutes <span class="citation">(Troiano et al. 2008)</span>. Bouted sedentary time can also be interesting, given recent enthusiasm for studying sedentary behaviors.</p>
 <p>Here is how you would use <em>bouts</em> to identify bouted MVPA for our subject of interest. Note that 2020 is a common cutpoint used to classify MVPA <span class="citation">(Troiano et al. 2008)</span>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mvpa &lt;-<span class="st"> </span><span class="kw">bouts</span>(<span class="dt">counts =</span> counts.<span class="dv">21007</span>, 
               <span class="dt">bout_length =</span> <span class="dv">10</span>, 
